@@ -59,11 +59,11 @@ def main():
 
             if user_embedding.shape[0] != st.session_state.embeddings.shape[1]:
                 user_embedding = np.zeros((user_embedding.shape[0], st.session_state.embeddings.shape[1]))
-                user_embedding[:, :st.session_state.embeddings.shape[1]] = embeddings
+                user_embedding[:, :st.session_state.embeddings.shape[1]] = user_embedding
         
             if ai_embedding.shape[0] != st.session_state.embeddings.shape[1]:
                 ai_embedding = np.zeros((ai_embedding.shape[0], st.session_state.embeddings.shape[1]))
-                ai_embedding[:, :st.session_state.embeddings.shape[1]] = embeddings
+                ai_embedding[:, :st.session_state.embeddings.shape[1]] = ai_embedding
 
 
             st.session_state.embeddings = np.vstack([st.session_state.embeddings[-max_embeds:], user_embedding, ai_embedding])
