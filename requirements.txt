@@ -1,5 +1,4 @@
 pandas>=1.0.0
 streamlit>=0.85.0
-supabase==0.0.246
 langchain == 0.0.247
 streamlit-chat == 0.1.1
