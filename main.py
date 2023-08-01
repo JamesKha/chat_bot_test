@@ -11,7 +11,7 @@ import numpy as np
 max_embeds = 25 
 def main():
    
-    
+    openai_api_key = st.secrets["OPENAI_API_KEY"]
     if "initialized" not in st.session_state:
         st.session_state.messages = ["How are you?"]
         st.session_state.initialized = True
@@ -35,8 +35,6 @@ def main():
 
         messages = st.session_state.messages
        
-
-
         if user_input:
             message(user_input, is_user=True)
             st.session_state.messages[-1] = HumanMessage(content=user_input)
